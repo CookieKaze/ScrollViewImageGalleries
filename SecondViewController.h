@@ -10,4 +10,6 @@
 
 @interface SecondViewController : UIViewController <UIScrollViewDelegate>
 
+@property UIImage * mainImage;
+
 @end

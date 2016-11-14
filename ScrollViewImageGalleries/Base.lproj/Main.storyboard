@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JGX-wh-dJX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,16 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="son-gz-SQo">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38d-8G-y9n">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="O6V-Sd-zDR"/>
+                                    <outletCollection property="gestureRecognizers" destination="Gjp-rw-aWR" appends="YES" id="5fr-n0-b0Z"/>
                                 </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="son-gz-SQo" secondAttribute="bottom" constant="20" id="Eew-QM-m5J"/>
                             <constraint firstItem="38d-8G-y9n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PL6-te-PcP"/>
+                            <constraint firstItem="son-gz-SQo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKp-0P-Vhi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="38d-8G-y9n" secondAttribute="bottom" id="fX8-e5-7am"/>
                             <constraint firstAttribute="trailing" secondItem="38d-8G-y9n" secondAttribute="trailing" id="tMw-QI-UOK"/>
                             <constraint firstItem="38d-8G-y9n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xue-K7-XJk"/>
@@ -38,9 +47,16 @@
                     </view>
                     <connections>
                         <outlet property="myScrollView" destination="38d-8G-y9n" id="J2Y-v2-D7P"/>
+                        <outlet property="pageControl" destination="son-gz-SQo" id="6Pc-2c-1tR"/>
+                        <segue destination="JGX-wh-dJX" kind="show" identifier="toZoomView" id="Lps-kQ-DBa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Gjp-rw-aWR">
+                    <connections>
+                        <action selector="onTapGesture:" destination="BYZ-38-t0r" id="ffD-lB-DXh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
         <!--Second View Controller-->
@@ -58,7 +74,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1I-Tt-eh5">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-night" translatesAutoresizingMaskIntoConstraints="NO" id="GSg-Ax-yLQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-night" translatesAutoresizingMaskIntoConstraints="NO" id="GSg-Ax-yLQ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="646"/>
                                     </imageView>
                                 </subviews>

@@ -20,11 +20,8 @@
     [super viewDidLoad];
     self.myScrollView.minimumZoomScale = 0.1;
     self.myScrollView.maximumZoomScale = 5;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.imageView.image = self.mainImage;
+    
 }
 
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
@@ -36,15 +33,5 @@
     float widthPadding = (self.myScrollView.frame.size.width + self.imageView.frame.size.width) + 2 ;
     self.myScrollView.contentInset= UIEdgeInsetsMake(heightPadding, widthPadding, heightPadding, widthPadding);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
