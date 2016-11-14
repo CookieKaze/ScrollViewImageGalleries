@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JGX-wh-dJX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,5 +43,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="cUv-Ga-V98">
+            <objects>
+                <viewController id="JGX-wh-dJX" customClass="SecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gpj-cJ-LXF"/>
+                        <viewControllerLayoutGuide type="bottom" id="BBa-HS-dPB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c6t-KO-V0a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1I-Tt-eh5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-night" translatesAutoresizingMaskIntoConstraints="NO" id="GSg-Ax-yLQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="646"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GSg-Ax-yLQ" firstAttribute="leading" secondItem="W1I-Tt-eh5" secondAttribute="leading" id="Cga-S2-Xza"/>
+                                    <constraint firstItem="GSg-Ax-yLQ" firstAttribute="centerY" secondItem="W1I-Tt-eh5" secondAttribute="centerY" id="FKG-X6-FrL"/>
+                                    <constraint firstItem="GSg-Ax-yLQ" firstAttribute="centerX" secondItem="W1I-Tt-eh5" secondAttribute="centerX" id="aGU-s9-DfH"/>
+                                    <constraint firstItem="GSg-Ax-yLQ" firstAttribute="top" secondItem="W1I-Tt-eh5" secondAttribute="top" id="pPD-aL-IKm"/>
+                                    <constraint firstAttribute="bottom" secondItem="GSg-Ax-yLQ" secondAttribute="bottom" id="qJI-nd-mv9"/>
+                                    <constraint firstAttribute="trailing" secondItem="GSg-Ax-yLQ" secondAttribute="trailing" id="w72-RV-CYL"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="JGX-wh-dJX" id="VWR-62-iIj"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W1I-Tt-eh5" firstAttribute="top" secondItem="Gpj-cJ-LXF" secondAttribute="bottom" id="3GO-0l-SLH"/>
+                            <constraint firstAttribute="trailing" secondItem="W1I-Tt-eh5" secondAttribute="trailing" id="3xs-TZ-HAU"/>
+                            <constraint firstItem="BBa-HS-dPB" firstAttribute="top" secondItem="W1I-Tt-eh5" secondAttribute="bottom" id="nnW-sc-zu2"/>
+                            <constraint firstItem="W1I-Tt-eh5" firstAttribute="leading" secondItem="c6t-KO-V0a" secondAttribute="leading" id="uAJ-wW-3bL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="GSg-Ax-yLQ" id="Hwc-k6-TJe"/>
+                        <outlet property="myScrollView" destination="W1I-Tt-eh5" id="wY7-Eq-wux"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCb-7w-xlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="37"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse-night" width="800" height="600"/>
+    </resources>
 </document>
