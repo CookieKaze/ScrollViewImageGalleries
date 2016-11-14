@@ -34,11 +34,11 @@
     
     UIImageView * imageView3 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"Lighthouse-zoomed"]];
     imageView3.frame = CGRectMake( imageWidth *2, 0, imageWidth, 300);
-    imageView2.clipsToBounds = YES;
+    imageView3.clipsToBounds = YES;
     imageView3.contentMode = UIViewContentModeScaleAspectFill;
     [self.myScrollView addSubview:imageView3];
     
-    
+    self.myScrollView.contentSize = CGSizeMake(imageView1.frame.size.width + imageView2.frame.size.width + imageView3.frame.size.width, 300);
 }
 
 
